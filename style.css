@@ -1,0 +1,419 @@
+*, ::after,::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+body{
+    scroll-behavior: smooth;
+}
+
+/* custom scroll bar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+section{
+    /* padding: 100px 0; */
+}
+/* .text-slider{
+    color: crimson;
+} */
+section .title::before{
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    width: 180px;
+    left: 50%;
+    height: 3px;
+    background-color: #111;
+    transform: translateX(-50%);
+}
+section .title::after{
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    font-size: 25px;
+    color: crimson;
+    padding: 0 5px;
+    background-color: white;
+    transform: translateX(-50%);
+}
+.max-width{
+    max-width: 1300px;
+    padding: 0 80px;
+    margin: auto;
+}
+.about .about-content, .skill .skill-content{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+
+}
+/* title for applying all  */
+section .title{
+    position: relative;
+   
+    text-align: center;
+    padding-bottom: 20px;
+    font-weight: bold;
+    font-size: 40px;
+    margin-bottom: 60px;
+}
+.text-slider-items {
+    display: none;
+}
+/* .navbar styling  */
+.navbar{
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+    padding: 18px 0px;
+    /* background-color: black; */
+    transition:  all 0.3s ease
+}
+ .navbar .max-width{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* background-color: aqua; */
+
+}
+.navbar .logo a{
+    color:  white;
+    font-size: 35px;
+    font-weight: bold;
+}
+.navbar .logo a span{
+    color:  crimson;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+.navbar .menu li{
+    display:  inline-block;
+    list-style:  none;
+
+}
+.navbar .menu li a {
+  display:  block;
+  color:  red;
+  font-size: 20px;
+  margin-left: 25px;
+  transition: color 0.3s ease;
+}
+.menu li a:hover{
+   color: crimson;
+   color:  white;
+}
+/* sticky scroll-behaviour  */
+.sticky{
+    position: fixed;
+    scroll-behavior: smooth;
+    /* top: 0; */
+    width: 100%;
+    /* background-color: red; */
+}
+/* styling HOME section */
+
+.home{
+    display: flex;
+    background:linear-gradient(to bottom, rgba(0,0,0,0.81),rgba(0,0,0,0.9)) ,url("image/bg.jpeg")no-repeat center center;
+    height: 100vh;
+    width: 100%;
+    min-height: 500px;
+    color: white;
+    background-size: cover;
+    object-fit: cover;
+    background-attachment: fixed;
+    background-position: top;
+    /* overflow: hidden; */
+}
+.home .max-width{
+    width: 100%;
+    display: flex;
+}
+.home .max-width .text1{
+    font-size: 27px;
+}
+.text-slider-items, .text-slider{
+    color: crimson;
+}
+.text2{
+    font-size: 75px;
+    font-weight: bold;
+    margin-left: -3px;
+}
+.text3{
+    font-size: 40px;
+    margin: 5px 0;
+}
+.home .home-content .text3 span{
+    color: crimson;
+    font-weight: bold;
+}
+
+/* about section styling */
+
+.about{
+    /* display: inline-block; */
+    display: flex;
+}
+.about .title::after{
+    content: "who i am";
+
+}
+.about .about-content .left{
+     width: 45%;
+     /* border: 1px solid red; */
+}
+.about .about-content .left img{
+    width: 350px; 
+    height:350px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+
+
+.about .about-content .right {
+    /* width: 55%; */
+    max-width: 55%;
+    /* border: 1px solid blue; */
+}
+.text{
+    font-size: 35px ;
+    /* font-weight: 600; */
+    margin-bottom: 10px;
+}
+.typing2{
+    color: crimson;
+    font-weight: bold;
+}
+.right p{
+    text-align: justify;
+    font-size: 20px;
+}
+.right a{
+    display: inline-block;
+    background: crimson;
+    color: white;
+    font-size: 20px;
+    padding: 10px 30px;
+    border: 2px solid crimson;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+    border-radius: 6px;
+}
+.right a:hover{
+    color:  crimson;
+    background: none;
+}
+
+/* skill section  */
+
+.skill{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    margin:  30px 0px;
+    /* border: 1px solid blue; */
+
+    
+}
+.skill-title{
+    font-size: 35px;
+    text-align: center;
+    
+}
+.skill-width{
+    text-align: center;
+    /* border: 1px solid rebeccapurple; */
+    margin: 10px 40px;
+}
+.icon img{
+    width: 150px;
+    height: 150px;
+    margin: 20px;
+    background-color: white;
+    
+}
+.icon h3{
+      font-size: 20px;
+      padding-bottom: 5px;
+
+}
+.icon p{
+    color: gray;
+    letter-spacing: 1.2px;
+    font-weight: bold;
+}
+
+
+.project{
+    /* padding: 30px auto; */
+    margin: 30px 0px;
+}
+.project-width{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 30px;
+    /* background-color: #2196F3; */
+    padding: 10px;
+    margin: 10px 50px;
+
+}
+
+.grid-item {
+   
+    padding: 20px;
+    /* grid-gap: 10px; */
+    font-size: 30px;
+    text-align: center;
+}
+.card{
+    padding: 20px;
+    /* border: 5px solid  black; */
+    height: 260px;
+    /* text-align: center; */
+    background-color: #f1f1f1;
+    box-shadow: 0 5px 9px 0 rgba(0,0,0,0.2);
+}
+.image img{
+    height: 120px;
+    width: 240px;
+}
+
+.card-about{
+    text-align: center;
+    text-decoration: underline;
+    letter-spacing: 1.2px;
+    color: blue;
+    font-size: 22px;
+    cursor: pointer;
+}
+.stack{
+    text-align: center;
+    font-size: 18px;
+    color: gray;
+    margin: 8px auto;
+    
+}
+
+/* contact section styling  */
+.contact{
+    display: flex;
+    /* border: 1px solid blue; */
+    padding: 0 100px;
+  
+}
+.contact .title::after{
+    content: "get in touch";
+    /* text-align: center;
+    margin: auto;
+    font-size: 40px; */
+
+}
+.para{
+    padding: 0px 50px;
+    color: gray;
+    text-align: justify;
+    font-size: 18px;
+    /* font-family: italic; */
+}
+.contact-left{
+    width: 55%;
+    float: left;
+    /* border: 1px solid rebeccapurple; */
+    text-align: center;
+    /* padding: 20px 40px; */
+    /* margin: auto 50px; */
+}
+.svg-icon {
+    font-size: 24px;
+    padding: 10px 30px;
+
+}
+.svg-icon a i{
+    padding: 20px 30px;
+    /* color: crimson; */
+    color: navy;
+}
+.contact-right{
+    flex-wrap: wrap;
+    text-align: center;
+    /* border: 1px solid gold; */
+    float: right;
+    width: 40%;
+    /* margin: auto 30px; */
+    
+  
+}
+
+
+.field{
+    padding: 0px 100px;
+}
+.right-h{
+    padding-bottom: 10px;
+}
+.field input ,textarea{
+    padding: 12px 10px ;
+    font-size: 15px;
+    border-radius: 8px;
+    margin: 8px 0px;
+    
+    width: 100%;
+    color: white;
+    border: 2px solid gray;
+    background: transparent;
+    resize: none;
+}
+.button-area{
+    /* padding: 8px 18px; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    margin: auto;
+}
+.button-area button{
+        /* display: inline-block; */
+        background: crimson;
+        color: white;
+        font-size: 15px;
+        padding: 10px 30px;
+        border: 2px solid crimson;
+        transition: all 0.3s ease;
+        margin:  auto;
+        border-radius: 6px;
+        margin-bottom: 15px;
+}
+
+
+footer{
+    background-color: #111;
+    padding: 15px 23px;
+    color: white;
+    text-align: center;
+    letter-spacing: 1.5px;
+}
+footer span a{
+    color: crimson;
+    text-decoration: none;
+    letter-spacing: 1.5px;
+}
+footer span a:hover{
+    text-decoration: underline;
+}
