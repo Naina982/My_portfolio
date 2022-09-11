@@ -3,7 +3,7 @@ window.onscroll= function(){
 }
 
 var navbar= document.getElementById("navbar")
-var sticky= navbar.offsetTop;
+// var sticky= navbar.offsetTop;
 
 function myfunction(){
     // if(window.pageYOffset>= sticky)
@@ -18,3 +18,13 @@ function myfunction(){
 
     }
 }
+
+// navbar toggle
+
+const navToggle= document.querySelector(".nav-toggle")
+const links= document.querySelector(".menu")
+
+navToggle.addEventListener("click", function(){
+    links.classList.toggle("show-links");
+   
+})
