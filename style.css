@@ -6,6 +6,7 @@
     --font2: 'Nanum Myeongjo', serif;
     --font3: 'Source Code Pro', monospace;
     --font4: 'Ubuntu', sans-serif;
+
 }
 
 
@@ -27,35 +28,13 @@ sans-serif; */
     padding: 0;
     box-sizing: border-box;
     text-decoration: none;
-    /* font-family: 'Source Code Pro', */
-    /* monospace; */
     /* border: 1px solid red; */
-
 }
 
 body {
     scroll-behavior: smooth;
 
 }
-
-/* custom scroll bar */
-/*
-::-webkit-scrollbar {
-    width: 10px;
-}
-
-::-webkit-scrollbar-track {
-    background: #f1f1f1;
-}
-
-::-webkit-scrollbar-thumb {
-    background: #888;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: #555;
-}
-*/
 
 section .title::before {
     content: "";
@@ -116,7 +95,7 @@ section .title {
     position: fixed;
     width: 100%;
     z-index: 999;
-    /* padding: 10px 0px; */
+    padding: 18px 0px;
     /* background-color: black; */
     transition: all 0.3s ease
 }
@@ -151,7 +130,7 @@ section .title {
 }
 
 .navbar .menu li {
-    /* display:  inline-block; */
+    display: inline-block;
     list-style: none;
     text-align: center;
 
@@ -160,7 +139,7 @@ section .title {
 .navbar .menu li a {
     display: block;
     color: red;
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-weight: bold;
     font-family: "ubuntu";
     /* margin-left: 25px; */
@@ -170,14 +149,8 @@ section .title {
 
 .menu li a:hover {
     color: crimson;
-    color: white;
+    /* color: white; */
     font-size: 19px;
-}
-
-.menu {
-    height: 0;
-    overflow: hidden;
-    transition: all 0.3s linear;
 }
 
 /* sticky scroll-behaviour  */
@@ -186,8 +159,37 @@ section .title {
     top: 0;
     scroll-behavior: smooth;
     width: 100%;
-    /* max-width: 1300px; */
+    background-color: #111;
+}
 
+.scroll-up-btn {
+    position: fixed;
+    height: 45px;
+    width: 42px;
+    background: crimson;
+    right: 30px;
+    bottom: 10px;
+    text-align: center;
+    line-height: 45px;
+    color: #fff;
+    z-index: 9999;
+    font-size: 30px;
+    border-radius: 6px;
+    border-bottom-width: 2px;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.scroll-up-btn.show {
+    bottom: 30px;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.scroll-up-btn:hover {
+    filter: brightness(90%);
 }
 
 /* styling HOME section */
@@ -213,11 +215,6 @@ section .title {
 
 .home .max-width .text1 {
     font-size: 27px;
-}
-
-.text-slider-items,
-.text-slider {
-    color: crimson;
 }
 
 .text2 {
@@ -557,92 +554,70 @@ footer span a:hover {
     text-decoration: underline;
 }
 
-/* nav-toggle  */
-.nav-toggle {
-    font-size: 1.5rem;
-    cursor: pointer;
-    border-color: #111;
-    margin: 0 20px;
-    background: transparent;
-    position: absolute;
-    right: 1rem;
-
-}
-
 .fa-bars {
     background-color: #111;
     color: white;
     font-size: 2rem !important;
 }
 
-.nav-toggle:hover {
-    color: crimson;
-    /* transform: rotate(180deg); */
-}
-
-.show-links {
-    height: 12rem;
-
-}
-
-/* @media screen and (min-width:942px) {
-    .max-width {
-            padding: 0 10px;
-            max-width: 930px;
-        }
-
-         .about-content {
-             flex-direction: column;
-         }
-    
-         .max-width .about-content .left {
-             width: 100%;
-    
-         }
-    
-         .max-width .about-content .right {
-             width: 100%;
-    
-         }
-    
-         .right p {
-             font-size: 16px;
-             flex: 100%;
-             width: 100%;
-         }
-} */
-
-@media screen and (min-width:800px) {
-
-    .navbar {
-        /* max-width: 1170px; */
-        margin: 0 auto;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 1rem;
-    }
-
-    .nav-toggle {
-        display: none;
-    }
-
-    .logo {
-        padding: 0;
-    }
-
-    .menu {
-        height: auto;
-        display: flex;
-    }
-
+.menu-btn {
+    color: #fff;
+    font-size: 23px;
+    cursor: pointer;
+    display: none;
 }
 
 
+
+
+@media screen and (max-width:947px) {
+    .menu-btn {
+        display: block;
+        z-index: 999;
+    }
+
+    .menu-btn i.active:before {
+        content: "\f00d";
+    }
+
+    .navbar .menu {
+        position: fixed;
+        height: 100vh;
+        width: 100%;
+        left: -100%;
+        top: 0;
+        background: #111;
+        text-align: center;
+        padding-top: 80px;
+        transition: all 0.3s ease;
+    }
+
+    .navbar .menu.active {
+        left: 0;
+    }
+
+    .navbar .menu li {
+        display: block;
+    }
+
+    .navbar .menu li a {
+        display: inline-block;
+        margin: 20px 0;
+        font-size: 25px;
+    }
+}
+
+
+
+/* responsiveness............................  */
 @media screen and (max-width: 768px) {
     section {
         margin: 0;
         padding: 0;
+    }
+
+    .navbar {
+        padding: 10px 0;
     }
 
     .inner-navbar {
@@ -726,6 +701,10 @@ footer span a:hover {
         padding: 0px 0px;
     }
 
+    .nav-toggle {
+        display: block;
+    }
+
     .show-links {
         background: #111;
         position: absolute;
@@ -734,6 +713,8 @@ footer span a:hover {
         width: 100%;
         padding: 0.5rem 1rem;
         left: 0;
+        height: 12rem;
+
     }
 
 }
